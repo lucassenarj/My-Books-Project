@@ -17,7 +17,7 @@ export class BooksService {
   }
 
   getApiKey():string{
-    return '&key=AIzaSyCYL3f7_BIqzzfWMqmB71I_DXKWPLeCNUc';
+    return '&key={key}';
   }
 
 }
