@@ -1,0 +1,14 @@
+<div class="row animate-box">
+  <div *ngFor="let book of books" class="col-md-4 text-center">
+    <a class="work" href="portfolio_detail.html">
+      <div class="work-grid" [style.background-image]="'url('+book.volumeInfo.imageLinks.thumbnail+')'">
+        <div class="inner">
+          <div class="desc">
+          <h3>{{ book.volumeInfo.title }}</h3>
+          <span class="cat">{{ book.volumeInfo.description | slice:0:100  }}...</span>
+        </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
