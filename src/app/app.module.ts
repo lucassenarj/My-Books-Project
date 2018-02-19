@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +12,11 @@ import { FooterComponent } from './footer/footer.component';
 
 import { BooksService } from './services/books.service';
 import { HttpModule } from '@angular/http';
+
+const appRoutes: Routes = [
+  { path: '',      component: BooksComponent },
+  { path: 'book/:id',      component: BookDetailComponent },
+];
 
 
 @NgModule({
@@ -25,7 +31,11 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [
     BooksService

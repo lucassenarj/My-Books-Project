@@ -12,11 +12,15 @@ export class BooksService {
   }
 
   getBooks(){
-    return this.http.get(this.baseApiPath+'volumes?q=harry+potter'+this.getApiKey()+'&maxResults=12');
+    return this.http.get(this.baseApiPath+'volumes?q=harry+potter&'+this.getApiKey()+'&maxResults=12');
+  }
+
+  getBookDetails(bookId){
+    return this.http.get(this.baseApiPath+'volumes/'+ bookId + '?' + this.getApiKey());
   }
 
   getApiKey():string{
-    return '&key={key}';
+    return 'key={key}';
   }
 
 }

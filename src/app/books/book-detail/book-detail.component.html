@@ -1,3 +1,30 @@
-<p>
-  book-detail works!
-</p>
+<div *ngIf="book != ''" id="fh5co-work">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <img [src]="book.imageLinks.small" width="100%">
+      </div>
+
+      <div class="col-lg-6 col-md-6">
+        <h3>{{book.title}}</h3>
+        <h5>Authors:
+          <a href="#" title="Asdas" target="_blank">{{book.authors}}</a>
+        </h5>
+        <p [innerHTML]="book.description"></p>
+        <a title="Views">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+          <span class="badge hover">dasda</span>
+        </a>
+        <a (click)="likeShot(shotDetail.id)" title="Likes">
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <span class="badge hover">dasdas</span>
+        </a>
+        <a title="Comments">
+          <i class="fa fa-comments" aria-hidden="true"></i>
+          <span class="badge hover">dsadas</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

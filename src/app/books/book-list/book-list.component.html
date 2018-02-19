@@ -1,6 +1,7 @@
-<div class="row animate-box">
+<div class="row">
   <div *ngFor="let book of books" class="col-md-4 text-center">
-    <a class="work" href="portfolio_detail.html">
+    <!--<a class="work" (click)="openBookDetails(event, book.id)">!-->
+      <a class="work" [routerLink]="['/book', book.id]">
       <div class="work-grid" [style.background-image]="'url('+book.volumeInfo.imageLinks.thumbnail+')'">
         <div class="inner">
           <div class="desc">
@@ -12,3 +13,4 @@
     </a>
   </div>
 </div>
+
